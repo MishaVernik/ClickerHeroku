@@ -11,7 +11,7 @@ def get_ses():
     for i in range(1,20):
         r = requests.get(request.form['text'])
         time.sleep(5)
-        return "Click: " + str(i)
+        yield "Click: " + str(i)
         
             
 
