@@ -9,7 +9,7 @@ app = Flask(__name__)
 def get_ses():
     #response = urllib.request.urlopen(request.form['text'])
     r = requests.get(request.form['text'])
-    return r
+    return str(r.text)
         
             
 
