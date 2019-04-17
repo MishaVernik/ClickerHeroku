@@ -4,14 +4,15 @@ import requests
 import time
 app = Flask(__name__)
 
+counter = 0
 
 @app.route("/btn_find", methods=['POST'])
 def get_ses():
+    number_of_repeats = int(request.form['number'])
     #response = urllib.request.urlopen(request.form['text'])    
-    for i in range(1,20):
+    for i in range(number_of_repeats):
         r = requests.get(request.form['text'])
         time.sleep(5)
-        yield "Click: " + str(i)
         
             
 
@@ -26,8 +27,13 @@ def source():
 <body>
 <h2 align="center">Welcome to the Clicker.online!</h2>
 <form method="POST" action="/btn_find">
+    <h3>Link</h3>
     <p align="center">
         <input name="text" type="text" value="">
+    </p>
+    <h3>Number of repeats</h3>
+     <p align="center">
+        <input name="number" type="text" value="">
     </p>
     <p align="center">
         <input name="start" type="submit" value="Start">
