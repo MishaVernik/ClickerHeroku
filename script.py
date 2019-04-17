@@ -7,10 +7,6 @@ app = Flask(__name__)
 counter = 1
 number_of_repeats = 0
 
-@app.route("/", methods=['POST'])
-def start():
-
-    return "Hello"
 
 @app.route("/btn_find", methods=['POST'])
 def get_ses():
@@ -32,6 +28,7 @@ def get_ses():
         print(number_of_repeats)
         print('#'*40)        
         time.sleep(sleeping_time)
+    app1 = Flask(__name__)
     html = '''<!DOCTYPE html>
 <html lang="en">
 <head>
