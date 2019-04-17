@@ -9,10 +9,12 @@ counter = 0
 @app.route("/btn_find", methods=['POST'])
 def get_ses():
     number_of_repeats = int(request.form['number'])
+    sleeping_time = float(request.form['text'])
     #response = urllib.request.urlopen(request.form['text'])    
     for i in range(number_of_repeats):
         r = requests.get(request.form['text'])
-        time.sleep(5)
+        time.sleep(sleeping_time)
+    return "Success!"
         
             
 
@@ -34,6 +36,10 @@ def source():
     <h3>Number of repeats</h3>
      <p align="center">
         <input name="number" type="text" value="">
+    </p>
+    <h3>Sleeping time</h3>
+     <p align="center">
+        <input name="sleeping" type="text" value="">
     </p>
     <p align="center">
         <input name="start" type="submit" value="Start">
