@@ -25,9 +25,9 @@ def get_ses():
 def send_request(s):
     try:
      r = requests.get(s)
-     if "200" in r.read():
-         pass
-    else
+     if r.status_code == 200:
+         return 1
+     else:
         raise ValueError
     except ValueError:       
         send_request(s)
