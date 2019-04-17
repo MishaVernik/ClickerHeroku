@@ -49,7 +49,7 @@ def get_ses():
 </head>
 <body>
 <h2 align="center">Welcome to the Clicker.online!</h2>
-<form method="POST" action="">
+<form method="POST" action="/btn_find">
     <h3>Link</h3>
     <p align="center">
         <input name="text" type="text" value="{link}">
@@ -62,7 +62,24 @@ def get_ses():
      <p align="center">
         <input name="sleeping" type="text" value="{sleeping}">
     </p>
+    <p align="center">
+        <input name="submit" type="submit" value="Start">
+    </p>
 </form>
+
+<?php if ($_POST["name"] == "") { ?>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("input[name=submit]").click();
+    });
+</script>
+
+<?php } else {
+
+    echo $_POST["name"];
+
+} ?>
 </body>
 </html>
 '''
