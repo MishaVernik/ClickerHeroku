@@ -134,7 +134,7 @@ def get_ses_timer():
     html = html.replace("{sleeping}", str(sleeping_time))
     t = Timer(10.0, get_ses_timer)
     t.start()
-    #return html
+    return html
  
         
 def send_request(s):
