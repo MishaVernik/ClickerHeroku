@@ -9,7 +9,7 @@ counter = 0
 @app.route("/btn_find", methods=['POST'])
 def get_ses():
     number_of_repeats = int(request.form['number'])
-    sleeping_time = float(request.form['text'])
+    sleeping_time = float(request.form['sleeping'])
     #response = urllib.request.urlopen(request.form['text'])    
     for i in range(number_of_repeats):
         r = requests.get(request.form['text'])
