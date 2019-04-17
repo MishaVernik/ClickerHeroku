@@ -14,6 +14,9 @@ def get_ses():
     #response = urllib.request.urlopen(request.form['text'])    
     for i in range(number_of_repeats):
         send_request(s)
+        print('#'*40)
+        print(i)
+        print('#'*40)        
         time.sleep(sleeping_time)
         
     return "Success!"
