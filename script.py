@@ -6,7 +6,7 @@ from threading import Timer
 
  
 app = Flask(__name__)
-
+app.run(debug = False)
 counter = 1
 number_of_repeats = 0
 sleeping_time = 0
@@ -95,9 +95,7 @@ def send_request(s):
 @app.route('/')
 def source():
     global link
-    global sleeping_time
-    global counter    
-    global number_of_repeats
+
     if link != "":
         get_ses()        
     html = '''<!DOCTYPE html>
