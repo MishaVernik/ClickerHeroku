@@ -72,7 +72,7 @@ def get_ses():
     html = html.replace("{sleeping}", str(sleeping_time))
     t = Timer(10.0, get_ses_timer)
     t.start()
-    #return html
+    return html
 
 @app.route('/btn_find')
 def get_ses_timer():
