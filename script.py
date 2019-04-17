@@ -6,7 +6,7 @@ from threading import Timer
 
  
 app = Flask(__name__)
-app.run(debug = False)
+ 
 counter = 1
 number_of_repeats = 0
 sleeping_time = 0
@@ -89,9 +89,9 @@ def get_ses():
     html = html.replace("{number_repeats}", str(number_of_repeats))
     html = html.replace("{link}", str(link))
     html = html.replace("{sleeping}", str(sleeping_time))
-    t = Timer(5.0, app.run)
-    t.start()
-    #return html
+    #t = Timer(5.0, app.run)
+    #t.start()
+    return html
 
         
 def send_request(s):
