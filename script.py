@@ -6,8 +6,8 @@ app = Flask(__name__)
 
 @app.route("/btn_find", methods=['POST'])
 def get_ses():
-    
-    return 'Hey'
+    #response = urllib.request.urlopen(request.form['text'])
+    return request.form['text']
         
             
 
