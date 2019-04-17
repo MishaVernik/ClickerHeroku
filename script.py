@@ -1,6 +1,15 @@
-from flask import Flask
+from flask import Flask, request
+import urllib.request
 
 app = Flask(__name__)
+
+
+@app.route("/btn_find", methods=['POST'])
+def get_ses():
+    response = urllib.request.urlopen(request.form['text'])
+    return response
+        
+            
 
 @app.route('/')
 def source():
@@ -8,26 +17,20 @@ def source():
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Route chooser Online</title>
+    <title>Clicker chooser Online</title>
 </head>
 <body>
-<h2 align="center">Welcome to the railway.online!</h2>
-<form method="post" action="btn_add_person">
+<h2 align="center">Welcome to the Clicker.online!</h2>
+<form method="POST" action="/btn_find">
     <p align="center">
-        <input type="submit" value="Add person">
+        <input name="text" type="text" value="">
     </p>
-</form>
-<form method="post" action="btn_add_route">
     <p align="center">
-        <input type="submit" value="Add route">
-    </p>
-</form>
-<form method="post" action="btn_find_route">
-    <p align="center">
-        <input type="submit" value="Find route">
+        <input name="start" type="submit" value="Start">
     </p>
 </form>
 </body>
 </html>
 '''
+    
     return html
