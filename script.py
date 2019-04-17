@@ -1,3 +1,3 @@
 import urllib.request
-contents = urllib.request.urlopen("http://example.com/foo/bar").read()
-print("<h3>" + contents + "</h3>")
+response = urllib.request.urlopen('https://www.google.com/')
+print("<h3>" + str(response.read()) + "</h3>")
