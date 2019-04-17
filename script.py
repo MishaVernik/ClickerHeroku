@@ -8,17 +8,26 @@ app = Flask(__name__)
 
 counter = 1
 number_of_repeats = 0
+sleeping_time = 0
+link = ""
 
 
 @app.route("/btn_find", methods=['POST'])
 def get_ses():
+    global link
+    global sleeping_time
     global counter    
     global number_of_repeats
 
     couter = 1
-    number_of_repeats = int(request.form['number'])
-    sleeping_time = float(request.form['sleeping'])
-    s = request.form['text']
+    if number_of_repeats == 0:
+        number_of_repeats = int(request.form['number'])
+    if sleeping_time == 0:
+        sleeping_time = float(request.form['sleeping'])
+    if link == "":
+        s = request.form['text']
+        link = s
+    
     #response = urllib.request.urlopen(request.form['text'])    
     while number_of_repeats > 0:
         if (sleeping_time*(counter+1) > 25):
@@ -61,7 +70,7 @@ def get_ses():
     html = html.replace("{number_repeats}", str(number_of_repeats))
     html = html.replace("{link}", str(s))
     html = html.replace("{sleeping}", str(sleeping_time))
-    t = Timer(10.0, get_ses)
+    t = Timer(5.0, get_ses)
     t.start()
     return html
 
