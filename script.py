@@ -2,6 +2,8 @@ from flask import Flask, request
 import urllib.request
 import requests
 import time
+from threading import Timer
+
 app = Flask(__name__)
 
 counter = 1
@@ -28,8 +30,41 @@ def get_ses():
         print(number_of_repeats)
         print('#'*40)        
         time.sleep(sleeping_time)
-    app1 = Flask(__name__)
-    return source()
+    html = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clicker chooser Online</title>
+</head>
+<body>
+<h2 align="center">Welcome to the Clicker.online!</h2>
+<form method="POST" action="">
+    <h3>Link</h3>
+    <p align="center">
+        <input name="text" type="text" value="{link}">
+    </p>
+    <h3>Number of repeats</h3>
+     <p align="center">
+        <input name="number" type="text" value="{number_repeats}">
+    </p>
+    <h3>Sleeping time</h3>
+     <p align="center">
+        <input name="sleeping" type="text" value="{sleeping}">
+    </p>
+</form>
+</body>
+</html>
+'''
+    if number_of_repeats < 0:        
+        return "Success"
+    
+    html = html.replace("{number_repeats}", str(number_of_repeats))
+    html = html.replace("{link}", str(s))
+    html = html.replace("{sleeping}", str(sleeping_time))
+    t = Timer(10.0, get_ses)
+    t.start()
+    return html
+
  
         
 def send_request(s):
