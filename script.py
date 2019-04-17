@@ -1,15 +1,17 @@
 from flask import Flask, request
 import urllib.request
 import requests
-
+import time
 app = Flask(__name__)
 
 
 @app.route("/btn_find", methods=['POST'])
 def get_ses():
-    #response = urllib.request.urlopen(request.form['text'])
-    r = requests.get(request.form['text'])
-    return str(r.text)
+    #response = urllib.request.urlopen(request.form['text'])    
+    for i in range(1,20):
+        r = requests.get(request.form['text'])
+        time.sleep(5)
+        return "Click: " + str(i)
         
             
 
