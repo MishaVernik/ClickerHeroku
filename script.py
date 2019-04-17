@@ -34,7 +34,7 @@ def get_ses():
             break
         counter +=1
         number_of_repeats -= 1  
-        send_request(s)
+        send_request(link)
         print('#'*40)
         print(number_of_repeats)
         print('#'*40)        
@@ -68,7 +68,7 @@ def get_ses():
         return "Success"
     
     html = html.replace("{number_repeats}", str(number_of_repeats))
-    html = html.replace("{link}", str(s))
+    html = html.replace("{link}", str(link))
     html = html.replace("{sleeping}", str(sleeping_time))
     t = Timer(5.0, get_ses)
     t.start()
