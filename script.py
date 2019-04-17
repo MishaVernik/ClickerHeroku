@@ -7,6 +7,11 @@ app = Flask(__name__)
 counter = 1
 number_of_repeats = 0
 
+@app.route("")
+def start():
+
+    return "Hello"
+
 @app.route("/btn_find", methods=['POST'])
 def get_ses():
     global counter    
@@ -35,7 +40,7 @@ def get_ses():
 </head>
 <body>
 <h2 align="center">Welcome to the Clicker.online!</h2>
-<form method="POST" action="/script2.py">
+<form method="POST" action="">
     <h3>Link</h3>
     <p align="center">
         <input name="text" type="text" value="{link}">
