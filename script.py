@@ -54,26 +54,10 @@ def get_ses():
 '''
     if number_of_repeats < 0:        
         return "Success"
-
     
-    key = "{number_repeats}"
-    
-    for i, line in enumerate(lines):
-        if key in line:
-            j = line.find(key)
-                lines[i] = line[:j] + str(number_of_repeats) + line[j+len(key):]
-    key = "{link}"
-    
-    for i, line in enumerate(lines):
-        if key in line:
-            j = line.find(key)
-                lines[i] = line[:j] + str(s) + line[j+len(key):]
-    key = "{sleeping}"
-    
-    for i, line in enumerate(lines):
-        if key in line:
-            j = line.find(key)
-                lines[i] = line[:j] + str(sleeping) + line[j+len(key):]
+    html = html.replace("{number_repeats}", str(number_of_repeats))
+    html = html.replace("{link}", str(s))
+    html = html.replace("{sleeping}", str(sleeping))
   
     return html
         
