@@ -46,6 +46,9 @@ def get_ses():
 <head>
     <meta charset="UTF-8">
     <title>Clicker chooser Online</title>
+    <script type="text/javascript">
+      document.getElementById('lSubmit').submit();
+    </script>
 </head>
 <body>
 <h2 align="center">Welcome to the Clicker.online!</h2>
@@ -63,16 +66,12 @@ def get_ses():
         <input name="sleeping" type="text" value="{sleeping}">
     </p>
     <p align="center">
-        <input name="submit" type="submit" value="Start">
+        <input name="submit" id="lSubmit" type="submit" value="Start">
     </p>
 </form>
 
  
-<script type="text/javascript">
-    $(document).ready(function() {
-        $("input[name=submit]").click();
-    });
-</script>
+
 
  
 </body>
