@@ -13,6 +13,7 @@ def get_ses():
     s = request.form['text']
     #response = urllib.request.urlopen(request.form['text'])    
     for i in range(number_of_repeats):
+        
         send_request(s)
         print('#'*40)
         print(i)
@@ -22,7 +23,17 @@ def get_ses():
     return "Success!"
         
 def send_request(s):
+    try:
      r = requests.get(s)
+     if "200" in r.read():
+         pass
+    else
+        raise ValueError
+    except ValueError:       
+        send_request(s)
+
+ 
+    
 
 @app.route('/')
 def source():
