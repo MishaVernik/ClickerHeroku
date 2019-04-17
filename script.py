@@ -7,7 +7,7 @@ app = Flask(__name__)
 counter = 1
 number_of_repeats = 0
 
-@app.route("", methods=['POST'])
+@app.route("/", methods=['POST'])
 def start():
 
     return "Hello"
