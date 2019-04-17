@@ -70,9 +70,9 @@ def get_ses():
     html = html.replace("{number_repeats}", str(number_of_repeats))
     html = html.replace("{link}", str(link))
     html = html.replace("{sleeping}", str(sleeping_time))
-    t = Timer(5.0, get_ses)
+    t = Timer(10.0, get_ses)
     t.start()
-    return html
+    #return html
 
  
         
