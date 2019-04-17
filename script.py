@@ -23,13 +23,15 @@ def get_ses():
     return "Success!"
         
 def send_request(s):
-    try:
-     r = requests.get(s)
-     if r.status_code == 200:
-         return 1
-     else:
-        raise ValueError
-    except ValueError:       
+    try:            
+        r = requests.get(s)
+        r.raise_for_status()
+        print('#'*40)
+        print("YES")
+        print('#'*40)     
+        if r.status_code == 200:        
+            return 1           
+    except requests.exceptions.HTTPError as err:        
         send_request(s)
 
  
