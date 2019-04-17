@@ -24,7 +24,7 @@ def get_ses():
         number_of_repeats -= 1  
         send_request(s)
         print('#'*40)
-        print(i)
+        print(number_of_repeats)
         print('#'*40)        
         time.sleep(sleeping_time)
     html = '''<!DOCTYPE html>
