@@ -4,5 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def source():
- html = 'Hello World!'
- return html
+    with open("index.html", 'r') as f:
+        html = f
+        
+    return html
