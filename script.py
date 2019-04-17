@@ -67,19 +67,14 @@ def get_ses():
     </p>
 </form>
 
-<?php if ($_POST["name"] == "") { ?>
-
+ 
 <script type="text/javascript">
     $(document).ready(function() {
         $("input[name=submit]").click();
     });
 </script>
 
-<?php } else {
-
-    echo $_POST["name"];
-
-} ?>
+ 
 </body>
 </html>
 '''
