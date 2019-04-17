@@ -4,23 +4,78 @@ import requests
 import time
 app = Flask(__name__)
 
-counter = 0
+counter = 1
+number_of_repeats = 0
 
 @app.route("/btn_find", methods=['POST'])
 def get_ses():
+    global counter    
+    global number_of_repeats
+
+    couter = 1
     number_of_repeats = int(request.form['number'])
     sleeping_time = float(request.form['sleeping'])
     s = request.form['text']
     #response = urllib.request.urlopen(request.form['text'])    
-    for i in range(number_of_repeats):
-        
+    while number_of_repeats > 0:
+        if (sleeping_time*counter > 25):
+            break
+        counter +=1
+        number_of_repeats -= 1  
         send_request(s)
         print('#'*40)
         print(i)
         print('#'*40)        
         time.sleep(sleeping_time)
-        
-    return "Success!"
+    html = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clicker chooser Online</title>
+</head>
+<body>
+<h2 align="center">Welcome to the Clicker.online!</h2>
+<form method="POST" action="/btn_find">
+    <h3>Link</h3>
+    <p align="center">
+        <input name="text" type="text" value="{link}">
+    </p>
+    <h3>Number of repeats</h3>
+     <p align="center">
+        <input name="number" type="text" value="{number_repeats}">
+    </p>
+    <h3>Sleeping time</h3>
+     <p align="center">
+        <input name="sleeping" type="text" value="{sleeping}">
+    </p>
+</form>
+</body>
+</html>
+'''
+    if number_of_repeats < 0:        
+        return "Success"
+
+    
+    key = "{number_repeats}"
+    
+    for i, line in enumerate(lines):
+        if key in line:
+            j = line.find(key)
+                lines[i] = line[:j] + str(number_of_repeats) + line[j+len(key):]
+    key = "{link}"
+    
+    for i, line in enumerate(lines):
+        if key in line:
+            j = line.find(key)
+                lines[i] = line[:j] + str(s) + line[j+len(key):]
+    key = "{sleeping}"
+    
+    for i, line in enumerate(lines):
+        if key in line:
+            j = line.find(key)
+                lines[i] = line[:j] + str(sleeping) + line[j+len(key):]
+  
+    return html
         
 def send_request(s):
     try:            
