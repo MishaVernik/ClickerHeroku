@@ -10,13 +10,16 @@ counter = 0
 def get_ses():
     number_of_repeats = int(request.form['number'])
     sleeping_time = float(request.form['sleeping'])
+    s = request.form['text']
     #response = urllib.request.urlopen(request.form['text'])    
     for i in range(number_of_repeats):
-        r = requests.get(request.form['text'])
+        send_request(s)
         time.sleep(sleeping_time)
+        
     return "Success!"
         
-            
+def send_request(s):
+     r = requests.get(s)
 
 @app.route('/')
 def source():
