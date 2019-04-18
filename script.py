@@ -31,8 +31,6 @@ def get_ses():
     
     #response = urllib.request.urlopen(request.form['text'])    
     while number_of_repeats > 0:
-        if (sleeping_time*(counter+1) > 25):
-            break
         counter +=1
         number_of_repeats -= 1  
         send_request(link)
