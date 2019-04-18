@@ -121,7 +121,79 @@ def get_ses_1():
 </head>
 <body>
 <h2 align="center">Welcome to the Clicker.online!</h2>
-<form method="POST" action="/btn_find_1">
+<form method="POST" action="/btn_find_2">
+    <h3>Link</h3>
+    <p align="center">
+        <input name="text" type="text" value="{link}">
+    </p>
+    <h3>Number of repeats</h3>
+     <p align="center">
+        <input name="number" type="text" value="{number_repeats}">
+    </p>
+    <h3>Sleeping time</h3>
+     <p align="center">
+        <input name="sleeping" type="text" value="{sleeping}">
+    </p>
+    <p align="center">
+        <input name="submit" id="BTN" type="submit" value="Start">
+    </p>
+</form>
+
+  <script>
+   document.getElementById('BTN').click();
+  </script>
+
+</body>
+</html>
+'''
+    if number_of_repeats <= 0:        
+        return "Success"
+    
+    html = html.replace("{number_repeats}", str(number_of_repeats))
+    html = html.replace("{link}", str(link))
+    html = html.replace("{sleeping}", str(sleeping_time))
+    #t = Timer(5.0, app.run)
+    #t.start()
+    return html
+
+@app.route("/btn_find_2", methods=['POST'])
+def get_ses_1():
+    global link
+    global sleeping_time
+    global counter    
+    global number_of_repeats
+    global app
+
+    couter = 1
+    if number_of_repeats == 0:
+        number_of_repeats = int(request.form['number'])
+    if sleeping_time == 0:
+        sleeping_time = float(request.form['sleeping'])
+    if link == "":
+        s = request.form['text']
+        link = s
+    
+    #response = urllib.request.urlopen(request.form['text'])    
+    while number_of_repeats > 0:
+        if (sleeping_time*(counter+1) > 25):
+            break
+        counter +=1
+        number_of_repeats -= 1  
+        send_request(link)
+        print('#'*40)
+        print(number_of_repeats)
+        print('#'*40)        
+        time.sleep(sleeping_time)
+    
+    html = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clicker chooser Online</title>
+</head>
+<body>
+<h2 align="center">Welcome to the Clicker.online!</h2>
+<form method="POST" action="/btn_find">
     <h3>Link</h3>
     <p align="center">
         <input name="text" type="text" value="{link}">
