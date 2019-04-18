@@ -105,7 +105,7 @@ def source():
     global link
 
     if link != "":
-        get_ses()        
+        return get_ses()        
     html = '''<!DOCTYPE html>
 <html lang="en">
 <head>
