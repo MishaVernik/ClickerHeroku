@@ -66,14 +66,14 @@ def get_ses():
         <input name="sleeping" type="text" value="{sleeping}">
     </p>
     <p align="center">
-        <input name="submit" id="lSubmit" type="submit" value="Start">
+        <input name="submit" id="BTN" type="submit" value="Start">
     </p>
 </form>
 
- 
+  <script>
+   document.getElementById('BTN').click();
+  </script>
 
-
- 
 </body>
 </html>
 '''
