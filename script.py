@@ -121,7 +121,7 @@ def get_ses_1():
 </head>
 <body>
 <h2 align="center">Welcome to the Clicker.online!</h2>
-<form method="POST" action="/btn_find">
+<form method="POST" action="/btn_find_1">
     <h3>Link</h3>
     <p align="center">
         <input name="text" type="text" value="{link}">
