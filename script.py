@@ -46,13 +46,10 @@ def get_ses():
 <head>
     <meta charset="UTF-8">
     <title>Clicker chooser Online</title>
-    <script type="text/javascript">
-      document.getElementById('lSubmit').submit();
-    </script>
 </head>
 <body>
 <h2 align="center">Welcome to the Clicker.online!</h2>
-<form method="POST" action="/btn_find">
+<form method="POST" action="/">
     <h3>Link</h3>
     <p align="center">
         <input name="text" type="text" value="{link}">
@@ -77,7 +74,7 @@ def get_ses():
 </body>
 </html>
 '''
-    if number_of_repeats < 0:        
+    if number_of_repeats <= 0:        
         return "Success"
     
     html = html.replace("{number_repeats}", str(number_of_repeats))
