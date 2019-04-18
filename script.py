@@ -157,7 +157,7 @@ def get_ses_1():
     return html
 
 @app.route("/btn_find_2", methods=['POST'])
-def get_ses_1():
+def get_ses_2():
     global link
     global sleeping_time
     global counter    
