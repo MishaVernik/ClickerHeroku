@@ -49,7 +49,7 @@ def get_ses():
 </head>
 <body>
 <h2 align="center">Welcome to the Clicker.online!</h2>
-<form method="POST" action="/">
+<form>
     <h3>Link</h3>
     <p align="center">
         <input name="text" type="text" value="{link}">
