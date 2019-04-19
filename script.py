@@ -54,7 +54,7 @@ def get_ses():
 </form>
 
   <script>
-   $(document).ready(function() {
+   jQuery(document).ready(function() {
         
             $.ajax({
                 url: '/btn_find',
