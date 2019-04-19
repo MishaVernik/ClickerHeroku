@@ -6,7 +6,7 @@ from threading import Timer
 
  
 app = Flask(__name__)
-
+print("NONONONO")
 what_now = 0
 number_of_repeats = 0
 sleeping_time = 0
