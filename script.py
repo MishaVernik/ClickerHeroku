@@ -16,12 +16,13 @@ def get_ses():
     counter = 1
     global number_of_repeats 
     global sleeping_time 
-    global link  
-    number_of_repeats = int(request.form['number'])
-    sleeping_time = float(request.form['sleeping'])
-    s = request.form['text']
+    global link
+    #http%3A%2F%2Ffbkraken.com%2FZXQSXq&number=17&sleeping=6.0&start=Start
+    number_of_repeats = int(request.args.get('number'))
+    sleeping_time = float(request.args.get('sleeping'))
+    s = request.args.get('text')
     link = s
-    
+    print(link)
     #response = urllib.request.urlopen(request.form['text'])    
     while number_of_repeats > 0:
         if (sleeping_time*(counter+1) > 25):
