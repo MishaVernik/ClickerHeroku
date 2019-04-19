@@ -1,1 +1,2 @@
-web: gunicorn script:app --worker-connections 1
+web: gunicorn script:app 
+worker: python script.py --worker-connections 1
