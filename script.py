@@ -47,7 +47,7 @@ def get_ses():
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 </head>
 <body>
-<h2 align="center">Welcome to the Clicker.online!</h2>
+<h2 align="center">Welcome to the Clicker.online!{number_repeats}</h2>
 
   <script>
    jQuery(document).ready(function() {
