@@ -9,7 +9,7 @@ app = Flask(__name__)
  
 @app.route("/btn_find", methods=['POST'])
 def get_ses():
-    couter = 1
+    counter = 1
     number_of_repeats = int(request.form['number'])
     sleeping_time = float(request.form['sleeping'])
     s = request.form['text']
