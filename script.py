@@ -4,7 +4,7 @@ import requests
 import time
 from threading import Timer
 
- 
+app.debug = False
 app = Flask(__name__)
 print("NONONONO")
 what_now = 0
