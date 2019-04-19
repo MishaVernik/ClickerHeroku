@@ -7,7 +7,7 @@ from threading import Timer
 
 app = Flask(__name__)
 app.config['DEBUG'] = False
-print("NONONONO")
+print("START __ 0001")
 check_if_one = 0
 what_now = 0
 number_of_repeats = 0
@@ -26,7 +26,7 @@ def get_ses():
         return "Success"
     counter = 1
     #http%3A%2F%2Ffbkraken.com%2FZXQSXq&number=17&sleeping=6.0&start=Start
-    print("THIS IS WHAT NOW : " + str(what_now))
+    print("THIS IS WHICH STEP IS NOW : " + str(what_now))
     what_now += 1
     if number_of_repeats == 0:
         number_of_repeats = int(request.args.get('number'))
@@ -38,7 +38,7 @@ def get_ses():
     print(link)
     #response = urllib.request.urlopen(request.form['text'])    
     while number_of_repeats > 0:
-        if (sleeping_time*(counter+1) > 25):
+        if (sleeping_time*(counter) >= 24):
             break
         counter +=1
         number_of_repeats -= 1  
