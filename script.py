@@ -17,10 +17,10 @@ def get_ses():
     global number_of_repeats 
     global sleeping_time 
     global link  
-    #number_of_repeats = int(request.form['number'])
-    #sleeping_time = float(request.form['sleeping'])
-    #s = request.form['text']
-    #link = s
+    number_of_repeats = int(request.form['number'])
+    sleeping_time = float(request.form['sleeping'])
+    s = request.form['text']
+    link = s
     
     #response = urllib.request.urlopen(request.form['text'])    
     while number_of_repeats > 0:
