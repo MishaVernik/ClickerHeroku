@@ -56,21 +56,11 @@ def get_ses():
   <script>
    $(document).ready(function() {
         
-        window.alert(1);
-            /*
-            
-            var textValue = $('#textField').val();
-
-            $.post('/test.php',{text: textValue}).done(function(data) {
-                alert(data);
-            }); */
-
             $.ajax({
                 url: '/btn_find',
                 method: 'POST'
             });
     });
-    window.alert(2);
   </script>
 
 </body>
@@ -113,7 +103,7 @@ def source():
     <title>Clicker chooser Online</title>
 </head>
 <body>
-<h2 align="center">Welcome to the Clicker.online!</h2>
+<h2 align="center">Welcome to the Clicker.online0001!</h2>
 <form method="POST" action="/btn_find">
     <h3>Link</h3>
     <p align="center">
