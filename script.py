@@ -7,11 +7,9 @@ from threading import Timer
  
 app = Flask(__name__)
  
-@app.route("/btn_find/")
+@app.route("/btn_find")
 def get_ses():
     counter = 1
-    print("NUMBER")
-    print(request.form['number'])
     number_of_repeats = int(request.form['number'])
     sleeping_time = float(request.form['sleeping'])
     s = request.form['text']
@@ -107,7 +105,7 @@ def source():
 </head>
 <body>
 <h2 align="center">Welcome to the Clicker.online0001!</h2>
-<form method="POST" action="/btn_find">
+<form action="/btn_find">
     <h3>Link</h3>
     <p align="center">
         <input name="text" type="text" value="">
