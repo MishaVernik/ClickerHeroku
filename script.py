@@ -4,8 +4,9 @@ import requests
 import time
 from threading import Timer
 
-app.debug = False
+
 app = Flask(__name__)
+app.config['DEBUG'] = False
 print("NONONONO")
 what_now = 0
 number_of_repeats = 0
@@ -135,7 +136,6 @@ def source():
                 url: '/btn_find'
             });
     });
-    location.reload();
   </script>
 
 </body>
