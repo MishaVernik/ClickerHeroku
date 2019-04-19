@@ -101,19 +101,11 @@ def source():
 <head>
     <meta charset="UTF-8">
     <title>Clicker chooser Online</title>
-    <script>
-   jQuery(document).ready(function() {
-        $("#BTN").click(function() {
-            $.ajax({                                
-                url: '/btn_find'
-            });
-        });
-    });
-  </script>
+ 
 </head>
 <body>
 <h2 align="center">Welcome to the Clicker.online0001!</h2>
-<form>
+<form action="/btn_find">
     <h3>Link</h3>
     <p align="center">
         <input name="text" type="text" value="">
@@ -131,12 +123,7 @@ def source():
     </p>
 </form>
 <script>
-   jQuery(document).ready(function() {
-            $.ajax({                                
-                url: '/btn_find'
-            });
-    });
-  </script>
+ 
 
 </body>
 </html>
