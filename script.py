@@ -14,20 +14,11 @@ link = ""
 
 @app.route("/btn_find", methods=['POST'])
 def get_ses():
-    global link
-    global sleeping_time
-    global counter    
-    global number_of_repeats
-    global app
-
     couter = 1
-    if number_of_repeats == 0:
-        number_of_repeats = int(request.form['number'])
-    if sleeping_time == 0:
-        sleeping_time = float(request.form['sleeping'])
-    if link == "":
-        s = request.form['text']
-        link = s
+    number_of_repeats = int(request.form['number'])
+    sleeping_time = float(request.form['sleeping'])
+    s = request.form['text']
+    link = s
     
     #response = urllib.request.urlopen(request.form['text'])    
     while number_of_repeats > 0:
