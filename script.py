@@ -54,11 +54,23 @@ def get_ses():
 </form>
 
   <script>
-   $.ajax({
-      url: '/btn_find',
-      method: 'POST'
-});
-    window.alert();
+   $(document).ready(function() {
+        
+        window.alert(1);
+            /*
+            
+            var textValue = $('#textField').val();
+
+            $.post('/test.php',{text: textValue}).done(function(data) {
+                alert(data);
+            }); */
+
+            $.ajax({
+                url: '/btn_find',
+                method: 'POST'
+            });
+    });
+    window.alert(2);
   </script>
 
 </body>
