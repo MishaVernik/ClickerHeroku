@@ -8,6 +8,7 @@ from threading import Timer
 app = Flask(__name__)
 app.config['DEBUG'] = False
 print("NONONONO")
+check_if_one = 0
 what_now = 0
 number_of_repeats = 0
 sleeping_time = 0
@@ -15,11 +16,15 @@ link = ""
 
 @app.route("/btn_find")
 def get_ses():
-    counter = 1
+    global check_if_one
+
     global what_now
     global number_of_repeats 
     global sleeping_time 
     global link
+    if check_if_one == 1:
+        return "Success"
+    counter = 1
     #http%3A%2F%2Ffbkraken.com%2FZXQSXq&number=17&sleeping=6.0&start=Start
     print("THIS IS WHAT NOW : " + str(what_now))
     what_now += 1
@@ -66,7 +71,8 @@ def get_ses():
 </body>
 </html>
 '''
-    if number_of_repeats <= 0:        
+    if number_of_repeats <= 0:
+        check_if_one = 1
         return "Success"
     print("NUMBER OF REPEATS : " + str(number_of_repeats))
     html = html.replace("{number_repeats}", str(number_of_repeats))
@@ -95,6 +101,16 @@ def send_request(s):
 
 @app.route('/')
 def source():
+    global check_if_one
+    global what_now
+    global number_of_repeats 
+    global sleeping_time 
+    global link
+    check_if_one = 0
+    what_now = 0
+    number_of_repeats = 0
+    sleeping_time = 0
+    link = ""
     print("WHY ___")
     html = '''<!DOCTYPE html>
 <html lang="en">
