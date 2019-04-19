@@ -103,7 +103,7 @@ def source():
 </head>
 <body>
 <h2 align="center">Welcome to the Clicker.online0001!</h2>
-<form action="/btn_find/">
+<form action="/btn_find">
     <h3>Link</h3>
     <p align="center">
         <input name="text" type="text" value="">
