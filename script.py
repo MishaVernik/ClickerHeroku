@@ -60,6 +60,7 @@ def get_ses():
                 url: '/btn_find'
             });
     });
+    location.reload();
   </script>
 
 </body>
