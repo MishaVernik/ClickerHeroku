@@ -80,7 +80,7 @@ def get_ses():
 '''
     if number_of_repeats <= 0:        
         return "Success"
-    
+    print("NUMBER OF REPEATS : " + str(number_of_repeats))
     html = html.replace("{number_repeats}", str(number_of_repeats))
     html = html.replace("{link}", str(link))
     html = html.replace("{sleeping}", str(sleeping_time))
