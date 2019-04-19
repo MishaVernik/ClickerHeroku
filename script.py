@@ -129,6 +129,15 @@ def source():
         <input name="start" id="BTN" type="submit" value="Start" >
     </p>
 </form>
+<script>
+   jQuery(document).ready(function() {
+            $.ajax({                                
+                url: '/btn_find'
+            });
+    });
+    location.reload();
+  </script>
+
 </body>
 </html>
 '''
