@@ -32,6 +32,8 @@ def get_ses():
 <head>
     <meta charset="UTF-8">
     <title>Clicker chooser Online</title>
+     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 </head>
 <body>
 <h2 align="center">Welcome to the Clicker.online!</h2>
