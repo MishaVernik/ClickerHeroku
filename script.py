@@ -94,7 +94,7 @@ def send_request(s):
 
 @app.route('/')
 def source():
-
+    print("WHY ___")
     html = '''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -112,7 +112,7 @@ def source():
 </head>
 <body>
 <h2 align="center">Welcome to the Clicker.online0001!</h2>
-<form>
+<form action="/btn_find">
     <h3>Link</h3>
     <p align="center">
         <input name="text" type="text" value="">
