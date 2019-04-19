@@ -18,10 +18,13 @@ def get_ses():
     global sleeping_time 
     global link
     #http%3A%2F%2Ffbkraken.com%2FZXQSXq&number=17&sleeping=6.0&start=Start
-    number_of_repeats = int(request.args.get('number'))
-    sleeping_time = float(request.args.get('sleeping'))
-    s = request.args.get('text')
-    link = s
+    if number_of_repeats == 0:
+        number_of_repeats = int(request.args.get('number'))
+    if sleeping_time == 0 :
+        sleeping_time = float(request.args.get('sleeping'))
+    if link == "":
+        s = request.args.get('text')
+        link = s
     print(link)
     #response = urllib.request.urlopen(request.form['text'])    
     while number_of_repeats > 0:
@@ -45,7 +48,7 @@ def get_ses():
 </head>
 <body>
 <h2 align="center">Welcome to the Clicker.online!</h2>
-<form method="POST" action="/btn_find">
+<form  action="/btn_find/">
     <h3>Link</h3>
     <p align="center">
         <input name="text" type="text" value="{link}">
@@ -67,7 +70,7 @@ def get_ses():
    jQuery(document).ready(function() {
         
             $.ajax({                                
-                url: '/btn_find'
+                url: '/btn_find/'
             });
     });
   </script>
