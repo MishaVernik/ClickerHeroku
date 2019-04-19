@@ -7,17 +7,21 @@ from threading import Timer
  
 app = Flask(__name__)
 
+what_now = 0
 number_of_repeats = 0
 sleeping_time = 0
 link = ""
 
-@app.route("/btn_find/")
+@app.route("/btn_find")
 def get_ses():
     counter = 1
+    global what_now
     global number_of_repeats 
     global sleeping_time 
     global link
     #http%3A%2F%2Ffbkraken.com%2FZXQSXq&number=17&sleeping=6.0&start=Start
+    print("THIS IS WHAT NOW : " + str(what_now))
+    what_now += 1
     if number_of_repeats == 0:
         number_of_repeats = int(request.args.get('number'))
     if sleeping_time == 0 :
@@ -53,7 +57,7 @@ def get_ses():
    jQuery(document).ready(function() {
         
             $.ajax({                                
-                url: '/btn_find/'
+                url: '/btn_find'
             });
     });
   </script>
