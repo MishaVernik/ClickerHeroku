@@ -7,11 +7,6 @@ from threading import Timer
  
 app = Flask(__name__)
  
-counter = 1
-number_of_repeats = 0
-sleeping_time = 0
-link = ""
-
 @app.route("/btn_find", methods=['POST'])
 def get_ses():
     couter = 1
@@ -98,10 +93,7 @@ def send_request(s):
 
 @app.route('/')
 def source():
-    global link
 
-    if link != "":
-        return get_ses()        
     html = '''<!DOCTYPE html>
 <html lang="en">
 <head>
