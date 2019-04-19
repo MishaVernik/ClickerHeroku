@@ -55,11 +55,9 @@ def get_ses():
 
   <script>
    jQuery(document).ready(function() {
-        $("button").click(function() {
             $.ajax({                                
                 url: '/btn_find'
             });
-        });
     });
     location.reload();
   </script>
@@ -110,7 +108,6 @@ def source():
             });
         });
     });
-    location.reload();
   </script>
 </head>
 <body>
