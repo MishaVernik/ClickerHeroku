@@ -6,14 +6,21 @@ from threading import Timer
 
  
 app = Flask(__name__)
- 
-@app.route("/btn_find")
+
+number_of_repeats = 0
+sleeping_time = 0
+link = ""
+
+@app.route("/btn_find/")
 def get_ses():
     counter = 1
-    number_of_repeats = int(request.form['number'])
-    sleeping_time = float(request.form['sleeping'])
-    s = request.form['text']
-    link = s
+    global number_of_repeats 
+    global sleeping_time 
+    global link  
+    #number_of_repeats = int(request.form['number'])
+    #sleeping_time = float(request.form['sleeping'])
+    #s = request.form['text']
+    #link = s
     
     #response = urllib.request.urlopen(request.form['text'])    
     while number_of_repeats > 0:
@@ -105,7 +112,7 @@ def source():
 </head>
 <body>
 <h2 align="center">Welcome to the Clicker.online0001!</h2>
-<form action="/btn_find">
+<form action="/btn_find/">
     <h3>Link</h3>
     <p align="center">
         <input name="text" type="text" value="">
