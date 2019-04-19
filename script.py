@@ -102,7 +102,7 @@ def source():
     <title>Clicker chooser Online</title>
     <script>
    jQuery(document).ready(function() {
-        $("BTN").click(function() {
+        $("#BTN").click(function() {
             $.ajax({                                
                 url: '/btn_find'
             });
@@ -112,7 +112,7 @@ def source():
 </head>
 <body>
 <h2 align="center">Welcome to the Clicker.online0001!</h2>
-<form action="/btn_find">
+<form>
     <h3>Link</h3>
     <p align="center">
         <input name="text" type="text" value="">
