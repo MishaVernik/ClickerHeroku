@@ -48,23 +48,6 @@ def get_ses():
 </head>
 <body>
 <h2 align="center">Welcome to the Clicker.online!</h2>
-<form  action="/btn_find/">
-    <h3>Link</h3>
-    <p align="center">
-        <input name="text" type="text" value="{link}">
-    </p>
-    <h3>Number of repeats</h3>
-     <p align="center">
-        <input name="number" type="text" value="{number_repeats}">
-    </p>
-    <h3>Sleeping time</h3>
-     <p align="center">
-        <input name="sleeping" type="text" value="{sleeping}">
-    </p>
-    <p align="center">
-        <input name="submit" id="BTN" type="submit" value="Start">
-    </p>
-</form>
 
   <script>
    jQuery(document).ready(function() {
