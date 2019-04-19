@@ -31,6 +31,8 @@ def get_ses():
     
     #response = urllib.request.urlopen(request.form['text'])    
     while number_of_repeats > 0:
+        if (sleeping_time*(counter+1) > 25):
+            break
         counter +=1
         number_of_repeats -= 1  
         send_request(link)
@@ -47,7 +49,7 @@ def get_ses():
 </head>
 <body>
 <h2 align="center">Welcome to the Clicker.online!</h2>
-<form method="POST" action="/btn_find_1">
+<form method="POST" action="/btn_find">
     <h3>Link</h3>
     <p align="center">
         <input name="text" type="text" value="{link}">
@@ -68,8 +70,8 @@ def get_ses():
   <script>
    $.ajax({
       url: '/btn_find',
-      method: 'POST'      
-    });
+      method: 'POST'
+});
   </script>
 
 </body>
@@ -84,8 +86,6 @@ def get_ses():
     #t = Timer(5.0, app.run)
     #t.start()
     return html
-
- 
 
  
 
