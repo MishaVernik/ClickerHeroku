@@ -7,9 +7,11 @@ from threading import Timer
  
 app = Flask(__name__)
  
-@app.route("/btn_find/", methods=['POST'])
+@app.route("/btn_find/")
 def get_ses():
     counter = 1
+    print("NUMBER")
+    print(request.form['number'])
     number_of_repeats = int(request.form['number'])
     sleeping_time = float(request.form['sleeping'])
     s = request.form['text']
@@ -58,8 +60,7 @@ def get_ses():
   <script>
    jQuery(document).ready(function() {
         
-            $.ajax({                
-                type: 'POST',
+            $.ajax({                                
                 url: '/btn_find'
             });
     });
