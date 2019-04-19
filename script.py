@@ -72,6 +72,7 @@ def get_ses():
       url: '/btn_find',
       method: 'POST'
 });
+    window.alert();
   </script>
 
 </body>
